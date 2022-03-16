@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        border: 1px solid black;
+        text-align: start;
+    }
+
+    #input {
+        width: 33%;
+        text-align: center;
+    }
+
+    input {
+        padding: 4px;
+        border-radius: 8px;
+        text-align: center;
+        width: 40%;
+    }
+
+    #celsius {
+        width: 30%;
+    }
+
+    #kelvin {
+        width: 30%;
+    }
+
+    td {
+        padding: 22px 0;
+        border: 1px solid black;
+        /* background-color: rgb(240, 198, 219); */
+    }
+</style>
+
+<body>
+        <h1>Temperature Converter</h1>
+        <table>
+
+            <tr>
+                <th id="input">Fehranheit</th>
+                <th id="celsius">Celsius</th>
+                <th id="kelvin">Kelvin</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="namef" placeholder="Enter value (in Fehranheit)"
+                        oninput="tempcon(this.value)" onchange="tempcon(this.value)">
+                </td>
+                <td>
+                    <span id="outcel"></span>
+                </td>
+                <td>
+                    <span id="outcel1"></span>
+                </td>
+            </tr>
+            <td>
+                <span id="outcel2"></span>
+            </td>
+            <td>
+                <input type="number" id="namef" placeholder="Enter value (in Celsius)" oninput="tempcon1(this.value)"
+                    onchange="tempcon1(this.value)">
+            </td>
+            <td>
+                <span id="outcel3"></span>
+            </td>
+            <tr>
+            </tr>
+            <td>
+                <span id="outcel4"></span>
+            </td>
+            <td>
+                <span id="outcel5"></span>
+            </td>
+            <td>
+                <input type="number" id="namef" placeholder="Enter value (in Kelvin)" oninput="tempcon2(this.value)"
+                    onchange="tempcon2(this.value)">
+            </td>
+            <tr>
+
+            </tr>
+    </table>
+    <script>
+        function tempcon(value) {
+            value = parseFloat(value)
+
+            document.getElementById('outcel').innerHTML = (value - 32) / 1.8
+            document.getElementById('outcel1').innerHTML = ((value - 32) / 1.8) + 273.15
+        }
+        function tempcon1(value) {
+            value = parseFloat(value)
+
+            document.getElementById('outcel2').innerHTML = (value * 1.8) + 32
+            document.getElementById('outcel3').innerHTML = (value + 273.15)
+        }
+        function tempcon2(value) {
+            value = parseFloat(value)
+
+            document.getElementById('outcel4').innerHTML = ((value - 273.15) * 1.8) + 32
+            document.getElementById('outcel5').innerHTML = value - 273.15
+        }
+    </script>
+</body>
+
+</html>
